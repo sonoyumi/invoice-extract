@@ -5,12 +5,14 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "invoice-extract"
 version = "0.1.0"
-description = "Короткое описание проекта"
+description = "Italian e-invoices (FatturaPA XML and signed .p7m) to validated data and an Excel report: VAT summary, suppliers, due dates, problems"
 readme = "README.md"
+license = { file = "LICENSE" }
 requires-python = ">=3.11"
 authors = [{ name = "Vladyslav Shokun", email = "sonoyumiii@gmail.com" }]
 dependencies = [
-    # "httpx>=0.27",
+    "openpyxl>=3.1,<4",
+    "defusedxml>=0.7,<1",
 ]
 
 [project.optional-dependencies]
@@ -19,8 +21,11 @@ dev = [
     "ruff>=0.6",
 ]
 
+[project.urls]
+Repository = "https://github.com/sonoyumi/invoice-extract"
+
 [project.scripts]
-invoice-extract = "invoice_extract.__main__:main"
+invoice-extract = "invoice_extract.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -30,7 +35,7 @@ pythonpath = ["src"]
 testpaths = ["tests"]
 
 [tool.ruff]
-line-length = 110
+line-length = 120
 target-version = "py311"
 
 [tool.ruff.lint]

@@ -1,13 +1,8 @@
-"""Точка входа: `python -m invoice_extract` или команда `invoice-extract`."""
+"""Entry points: `python -m invoice_extract` or the `invoice-extract` command."""
 
+import sys
 
-def greet(name: str) -> str:
-    return f"Привет, {name}!"
-
-
-def main() -> None:
-    print(greet("мир"))
-
+from invoice_extract.cli import main
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

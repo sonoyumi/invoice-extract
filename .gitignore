@@ -1,23 +1,16 @@
-# Секреты
-.env
-.env.*
-!.env.example
-
-# Данные и логи
+# Invoices and reports contain real business data: never commit them
+report*.xlsx
+*.csv
 data/
-*.db
-*.sqlite3
-*.log
+input/
 
 # Python
 __pycache__/
 *.py[cod]
 .venv/
-venv/
 *.egg-info/
 .pytest_cache/
 .ruff_cache/
-.mypy_cache/
 dist/
 build/
 
